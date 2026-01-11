@@ -1,0 +1,195 @@
+/* Sections style */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+    padding-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-link {
+    position: relative;
+    display: block;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.02em;
+    transition: 200ms ease-in;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #747bff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 110%;
+    height: 4px;
+    border-radius: 4px;
+    transform-origin: center;
+    animation: stretch 400ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 200ms both;
+}
+
+.nav-link.active::after {
+    background: #747bff;
+}
+
+.back-link {
+    position: relative;
+    display: inline-block;
+    padding: 4px 8px;
+    margin-top: 32px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.back-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 16px;
+    height: 16px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z'/%3E%3C/svg%3E");
+    transition: 300ms ease-in;
+    transition-property: opacity;
+    opacity: 0;
+    animation: slide 500ms linear infinite alternate-reverse both;
+    animation-play-state: paused;
+}
+
+.back-link:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ---------- GALLERY ---------- */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1128px;
+}
+
+.gallery-item {
+    width: calc((100% - 48px) / 3);
+}
+
+.gallery-link {
+    display: block;
+    text-decoration: none;
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 250ms ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.04);
+}
+
+.sl-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Лічильник */
+.sl-counter {
+    color: #fff !important;
+    opacity: 1 !important;
+}
+
+/* Хрестик і стрілки — SVG stroke */
+.sl-close svg,
+.sl-prev svg,
+.sl-next svg {
+    stroke: #fff !important;
+}
+
+/* На випадок, якщо бібліотека використовує fill */
+.sl-close svg path,
+.sl-prev svg path,
+.sl-next svg path {
+    fill: #fff !important;
+    stroke: #fff !important;
+}
+
+/* ---------- FORM ---------- */
+
+.feedback-form {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 408px;
+}
+
+.feedback-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.feedback-form button {
+    width: 95px;
+    padding: 8px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #4e75ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background-color: #6c8cff;
+}

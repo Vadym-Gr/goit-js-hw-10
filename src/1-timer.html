@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Timer</title>
@@ -10,12 +10,7 @@
   </head>
   
   <body>
-    <load
-      src="./partials/header.html"
-      icon-path="./img/sprite.svg#logo"
-      highlight-act="active"
-    />
-
+    
     <main>
       <div class="container">
         <a class="back-link" href="./index.html">Go back</a>
@@ -26,6 +21,7 @@
         <input type="text" id="datetime-picker" />
         <button type="button" data-start disabled>Start</button>
 
+        <div class="timer-container">
         <div class="timer">
           <div class="field">
             <span class="value" data-days>00</span>
@@ -43,6 +39,7 @@
             <span class="value" data-seconds>00</span>
             <span class="label">Seconds</span>
           </div>
+        </div>
         </div>
 
       </div>
